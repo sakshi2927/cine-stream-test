@@ -13,7 +13,7 @@ import { FavoritesProvider } from './context/FavoritesContext';
 function Home() {
   const [query, setQuery] = useState('');
   const debouncedQuery = useDebounce(query, 500);
-  const { movies, loading, hasMore, loadMore } = useMovies(debouncedQuery);
+  const { movies, loading, error, hasMore, loadMore } = useMovies(debouncedQuery);
 
   const handleMoodResult = (title) => {
     setQuery(title);
@@ -30,6 +30,12 @@ function Home() {
       </div>
 
       <MoodMatcher onFound={handleMoodResult} />
+
+      {error && (
+        <p className="error" role="alert">
+          Failed to load movies: {error.message}
+        </p>
+      )}
 
       <MovieGrid
         movies={movies}
