@@ -46,3 +46,5 @@ A **Netflix-lite** movie discovery application built with React and Vite. It use
 
 - This is a frontend-only project. API keys are exposed in the build; use a server proxy for production.
 - The Mood Matcher currently calls OpenAI's chat completion endpoint and expects a single movie title.
+- <img width="1362" height="683" alt="image" src="https://github.com/user-attachments/assets/8a45b783-02a1-4c5f-b370-5e74945ad7bd" />
+
